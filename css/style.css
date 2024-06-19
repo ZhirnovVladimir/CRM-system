@@ -1,0 +1,620 @@
+body {
+    font-family: "Open Sans";
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+}
+
+.container {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.table-conatiner {
+    overflow-x: auto;
+    background-color: white;
+    margin-bottom: 40px;
+}
+
+.blocking__container {
+    display: none;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    z-index: 99999999;
+}
+
+.blocking {
+    display: block;
+}
+
+.input-group {
+    flex-direction: column;
+    padding-top: 15px;
+    width: 30%;
+}
+
+.container-filter {
+    padding-top: 30px;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.input-group>.custom-file,
+.input-group>.custom-select,
+.input-group>.form-control,
+.input-group>.form-control-plaintext {
+    width: 100%;
+}
+
+.table {
+
+    margin-bottom: 50px;
+}
+
+.alert-feedback {
+    display: block;
+}
+
+.group-filter {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #fff;
+}
+
+.form-filter {
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    max-width: 581px;
+    min-height: 44px;
+    padding: 16px 12px;
+    font-size: 14px;
+}
+
+.filter-image {
+    margin-right: 53px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.loading__container {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: all linear 0.2s;
+}
+
+.loading__container-animation {
+    padding: 0 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+}
+
+
+.loading__container-animation>svg {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.loading {
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.loading>svg {
+    opacity: 1;
+}
+
+.loading__circle {
+    animation: 2s linear infinite loading
+}
+
+@keyframes loading {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.loading__container-animation-changed {
+    display: inline-block;
+}
+
+.changed-loading {
+    display: none;
+}
+
+.circle_changed {
+    display: inline;
+    transform: translate(0px -2px);
+    animation: 2s linear infinite loading-changed
+}
+
+@keyframes loading-changed {
+    0% {
+        transform: translate(0, -10%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, -10%) rotate(360deg);
+    }
+}
+
+
+.server-error-descr {
+    display: none;
+    font-size: 10px;
+    font-weight: 400;
+    color: #F06A4D;
+}
+
+.server-error-descr-show {
+    display: inline-block;
+}
+
+.table-head-text {
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(176, 176, 176, 1);
+}
+
+.table thead th {
+    border: none;
+    align-items: center;
+}
+
+.filter-fio {
+    font-weight: 600;
+    font-size: 10px;
+    color: #9873FF;
+}
+
+.btn-primary {
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #9873FF;
+    background-color: #F5F5F5;
+    padding: 15px 26px;
+}
+
+.btn-primary:hover {
+    background-color: #9873FF;
+    border-color: #9873FF;
+}
+
+.btn-primary:hover span {
+    color: white;
+}
+
+.btn-primary:hover svg path {
+    fill: white;
+}
+
+.btn-primary span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #9873FF;
+}
+
+.table-cell__text {
+    font-weight: 400;
+    color: #B0B0B0;
+}
+
+.table-contact__container-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 7px;
+    margin-bottom: 7px;
+}
+
+.table-contact__container-icon-hide {
+    display: none;
+}
+
+.table-contact__descr {
+    display: block;
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    width: 170px;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -85px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #fff;
+    padding: 7px 18px;
+    background-color: rgba(51, 51, 51, 1);
+}
+
+.table-contact__container-icon:hover>span {
+    visibility: visible
+}
+
+.table-contact__descr:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(51, 51, 51, 1);
+    transform: translateX(-50%);
+}
+
+.btn__action {
+    color: black;
+    border: none;
+    background-color: inherit;
+}
+
+.btn__action:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.btn__action:focus {
+    outline: none;
+}
+
+.loading-modal {
+    overscroll-behavior: contain;
+    opacity: 1;
+    transform: scale(1);
+    transition: all linear 0.2s;
+    padding: 30px 0px;
+    overflow: auto;
+    max-width: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-container {
+    position: absolute;
+    top: 30px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 450px;
+    padding: 0px;
+}
+
+.delete-modal-container {
+    top: 35%;
+}
+
+.modal-container-header {
+    padding: 25px 30px;
+    padding-bottom: 0;
+    margin-bottom: 25px;
+}
+
+.modal-header {
+    display: inline-block;
+    font-size: 18px;
+    border: none;
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 32px;
+}
+
+.delete-header {
+    display: block;
+    text-align: center;
+    margin-bottom: 11px;
+}
+
+.modal-header__delete-text {
+    text-align: center;
+    font-size: 14px;
+}
+
+.modal-header__id {
+    font-size: 12px;
+    font-weight: 400;
+    color: #B0B0B0;
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background-color: inherit;
+}
+
+.modal__close:focus {
+    outline: none;
+}
+
+.gorup-add {
+    padding: 0;
+    width: 100%;
+
+}
+
+.input-add__fio {
+    font-weight: 400;
+    margin-bottom: 32px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #C8C5D1;
+}
+
+.input-add__fio:focus {
+    outline: none;
+}
+
+.button-add__new-contact {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    margin-bottom: 25px;
+}
+
+.button-add__new-contact:focus {
+    outline: none;
+}
+
+.add-contact {
+    background-color: rgba(200, 197, 209, 0.2);
+    margin-bottom: 25px;
+    padding-top: 25px;
+}
+
+.modal-input__contact-container {
+    position: relative;
+    display: flex;
+    padding: 0px 30px;
+    margin-bottom: 15px;
+}
+
+.add-contact div:last-of-type {
+    margin-bottom: 25px;
+}
+
+.modal-input__contact-select {
+    cursor: pointer;
+    padding: 10px 10px;
+    font-size: 12px;
+    max-height: 37px;
+    width: 45%;
+    background-color: inherit;
+    border: 1px solid #C8C5D1;
+    border-collapse: collapse;
+    appearance: none;
+}
+
+.modal-input__contact-select:focus {
+    outline: none;
+}
+
+.modal-input__contact-arrow {
+    pointer-events: none;
+    position: absolute;
+    width: 10px;
+    height: 6px;
+    top: 45%;
+    left: 28%;
+    transition: transform linear 0.2s;
+}
+
+.modal-input__contact-arrow-rotate {
+    transform: rotate(180deg);
+    transition: transform linear 0.2s;
+}
+
+.input-add__contact {
+    width: 100%;
+    font-size: 14px;
+    padding: 7px 11px;
+    border: 1px solid #C8C5D1;
+    border-collapse: collapse;
+    background-color: inherit;
+    padding-right: 0;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 27px;
+    height: 37px;
+    background: url(../img/cancel.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    background-color: #E7E5EB;
+    border: 1px solid #C8C5D1;
+    cursor: pointer;
+}
+
+.input-add__contact:focus {
+    outline: none;
+}
+
+#addInputMiddleName,
+#changeInputMiddleName {
+    margin: 0;
+}
+
+.modal__button-group {
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+.modal__button-group-button-save {
+    display: block;
+    border: none;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    color: #fff;
+    background-color: #9873FF;
+    padding: 12px 35px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.modal__button-group-button-save:hover {
+    color: black;
+}
+
+.modal__button-group-button-save:focus {
+    outline: none;
+}
+
+.modal__button-group-button-cancel {
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.modal__button-group-button-cancel:hover {
+    text-decoration: none;
+}
+
+.modal__button-group-button-cancel:focus {
+    outline: none;
+}
+
+.input-group__label {
+    margin: 0;
+    margin-bottom: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #B0B0B0;
+}
+
+.violet-star {
+    color: #9873FF;
+}
+
+.modal-input-button__contact-delete {
+    display: inline-block;
+    border: 1px solid #C8C5D1;
+    border-left: none;
+    max-width: 27px;
+    max-height: 37px;
+    padding: 6px 5px;
+}
+
+.modal-input-button__contact-delete:focus {
+    outline: none;
+}
+
+.table-sort__button {
+    background-color: inherit;
+    display: inline;
+    padding: 0;
+    border: none;
+}
+
+.table-sort__button:focus {
+    outline: none;
+}
+
+.bi-arrow-down-short {
+    transition: transform linear 0.2s;
+}
+
+.arrow-up>svg {
+    transform: rotate(180deg);
+    transition: transform linear 0.2s;
+}
+
+.error-descr::placeholder {
+    display: inline;
+    font-size: 10px;
+    font-weight: 400;
+    color: #F06A4D;
+}
+
+.server-error__descr {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 8px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #F06A4D;
+}
+
+.server-error__descr-hide {
+    display: none;
+}
+
+.table-contacts__show-all-contacts-btn {
+    display: block;
+    background-color: inherit;
+    padding: 2px 2px;
+    border-radius: 15px;
+    height: 17px;
+    width: 17px;
+    margin-bottom: 3px;
+    border: 1px solid #9873FF;
+    font-size: 8px;
+    line-height: 11px;
+    font-weight: 600;
+    transition: all 0.2s linear;
+}
+
+.table-contacts__show-all-contacts-btn:hover {
+    background-color: #9873FF;
+    color: white;
+}
+
+.table-contacts__show-all-contacts-btn:focus {
+    outline: none;
+}
+
+.table-contacts__show-all-contacts-btn-hidden {
+    display: none;
+}
+
+.table-cell__contacts {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
